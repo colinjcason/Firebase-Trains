@@ -1,0 +1,17 @@
+.container {
+    text-align: center;
+}
+
+.jumbotron {
+    width: 90%;
+    margin-left: 70px;
+}
+.table {
+    width: 90%;
+    margin-left: 70px;
+}
+#form {
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 20px;
+}

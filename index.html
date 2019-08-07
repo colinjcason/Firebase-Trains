@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-database.js"></script>
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Crazy Train</h1>
+            <p class="lead">Log a train to your favorite 80s rock band!</p>
+        </div>
+    </div>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Band</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Ozzfest</th>
+                <td>Hell</td>
+                <td>Black Sabbath</td>
+                <td>25 minutes</td>
+                <td>4:00 PM</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <th scope="row">Blistering Speed</th>
+                <td>San Diego</td>
+                <td>Van Halen</td>
+                <td>5 minutes</td>
+                <td>3:30 PM</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <th scope="row">The Trooper</th>
+                <td>Great Britain</td>
+                <td>Iron Maiden</td>
+                <td>10 minutes</td>
+                <td>5:00pm</td>
+                <td>5</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form id="form">
+        <div class="form-group">
+            <label for="train-name-input">Train Name</label>
+            <input class="form-control" id="train-name" placeholder="Old Blue" type="text">
+        </div>
+        <div class="form-group">
+            <label for="destination-input">Destination</label>
+            <input class="form-control" id="destination" placeholder="Madison Square Garden" type="text">
+        </div>
+        <div class="form-group">
+            <label for="band-input">Band</label>
+            <input class="form-control" id="band" placeholder="Slayer" type="text">
+        </div>
+        <div class="form-group">
+            <label for="arrival-input">First Train Arrival</label>
+            <input class="form-control" id="train-arrival" placeholder="5:00 PM" type="text">
+        </div>
+        <div class="form-group">
+            <label for="frequency-input">Frequency (in minutes)</label>
+            <input class="form-control" id="frequency" placeholder="10" type="text">
+        </div>
+        <button type="submit" class="btn btn-dark" id="add-train">Submit</button>
+    </form>
+
+
+    <script src="assets\javascript.js"></script>
+
+</body>
+
+</html>
