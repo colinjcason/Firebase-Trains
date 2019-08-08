@@ -14,7 +14,6 @@
   var database = firebase.database();
 
   $("#add-train").on("click", function() {
-    console.log("click");
 
       event.preventDefault();
 
@@ -22,14 +21,12 @@
     var trainName = $("#train-name").val().trim();
     var destination = $("#destination").val().trim();
     var band = $("#band").val().trim();
-    var arrival = $("#train-arrival").val().trim();
-    var frequency = $("#frequency").val().trim();
+    var frequency = $("#frequency").val();
 
     var newTrain = {
         name: trainName,
         destination: destination,
         band: band,
-        arrival: arrival,
         frequency: frequency
     };
 
@@ -38,7 +35,29 @@
     console.log(newTrain.name);
     console.log(newTrain.destination);
     console.log(newTrain.band);
-    console.log(newTrain.arrival);
     console.log(newTrain.frequency);
+
+    var frequency = $("#frequency").val();
+
+    var currentTime = moment();
+    console.log(currentTime);
+
+    var diffTime = moment().diff(currentTime, "minutes");
+
+    var remainder = diffTime % frequency;
+
+    var minutesTillNext = frequency - remainder;
+
+    var nextTrain = moment().add(minutesTillNext, "minutes");
+
+    var newRow = $("<tr>").append(
+      $("<td>").text(trainName),
+      $("<td>").text(destination),
+      $("<td>").text(band),
+      $("<td>").text(frequency),
+      $("<td>").text(nextTrain)
+    );
+
+    $(".table").append(newRow);
 
   });
