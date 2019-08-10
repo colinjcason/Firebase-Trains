@@ -32,30 +32,29 @@
 
     database.ref().push(newTrain);
 
-    console.log(newTrain.name);
-    console.log(newTrain.destination);
-    console.log(newTrain.band);
-    console.log(newTrain.frequency);
+    var frequency = moment($("#frequency").val(), "HH:mm");
+    console.log(frequency);
 
-    var frequency = $("#frequency").val();
+    var time = moment().format("hh:mm");
+    console.log(time);
 
-    var currentTime = moment();
-    console.log(currentTime);
+    var difference = moment().diff(moment(frequency), "minutes");
+    console.log(difference);
 
-    var diffTime = moment().diff(currentTime, "minutes");
+    // var a = moment(2300, "hh").from();
+    // console.log(a);
 
-    var remainder = diffTime % frequency;
+    // var newTime = moment.unix(a);
+    // console.log(newTime);
 
-    var minutesTillNext = frequency - remainder;
 
-    var nextTrain = moment().add(minutesTillNext, "minutes");
 
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(destination),
       $("<td>").text(band),
       $("<td>").text(frequency),
-      $("<td>").text(nextTrain)
+      $("<td>").text(now)
     );
 
     $(".table").append(newRow);
