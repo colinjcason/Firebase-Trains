@@ -32,31 +32,29 @@
 
     database.ref().push(newTrain);
 
-    var frequency = moment($("#frequency").val(), "HH:mm");
+    var nextArrival = $("#frequency").val();
+
+    function validateTime(str) {
+      var temp = str.replace(":", "");
+      return temp;
+    }
+
+    var frequency = validateTime($("#frequency").val());
     console.log(frequency);
 
-    var time = moment().format("hh:mm");
-    console.log(time);
+    var diff = moment().diff(moment(frequency, "hh:mm"), "minutes");
+    console.log(diff);
 
-    var difference = moment().diff(moment(frequency), "minutes");
-    console.log(difference);
-
-    // var a = moment(2300, "hh").from();
-    // console.log(a);
-
-    // var newTime = moment.unix(a);
-    // console.log(newTime);
-
-
-
+    var dur = moment.duration((diff * -1), "minutes");
+    var text = dur.hours() + " hours " + dur.minutes() + " minutes";
+    
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(destination),
       $("<td>").text(band),
-      $("<td>").text(frequency),
-      $("<td>").text(now)
+      $("<td>").text(moment(nextArrival, "HH:mm").format("h:mm A")),
+      $("<td>").text(text)
     );
 
     $(".table").append(newRow);
-
   });
