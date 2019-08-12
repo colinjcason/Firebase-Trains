@@ -15,3 +15,6 @@ This application takes the user input (in military time) and displays when the n
 
 ## Instructions
 In the field at the bottom of the page, log a new train in military time. The page will then display when the next train will arrive and how far away it is in hours and minutes.
+
+# License
+[GNU](https://github.com/colinjcason/Firebase-Trains/blob/master/LICENSE)
