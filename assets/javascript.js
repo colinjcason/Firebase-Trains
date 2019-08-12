@@ -45,9 +45,11 @@
     var diff = moment().diff(moment(frequency, "hh:mm"), "minutes");
     console.log(diff);
 
+    // moment.js gives a negative value for the var diff, times by negative 1 to get a usable value
     var dur = moment.duration((diff * -1), "minutes");
+
     var text = dur.hours() + " hours " + dur.minutes() + " minutes";
-    
+
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(destination),
@@ -57,4 +59,10 @@
     );
 
     $(".table").append(newRow);
+
+    // clear all the fields to start from a blank state
+    $("#train-name").val("");
+    $("#destination").val("");
+    $("#band").val("");
+    $("#frequency").val("");
   });
