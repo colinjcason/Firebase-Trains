@@ -1,5 +1,8 @@
 # Firebase-Trains
 
+## Deployment
+(https://colinjcason.github.io/Firebase-Trains/)
+
 ## Description
 This project is a simple exercise in Google Firebase and the moment.js cdn that allows the user to add a train to the schedule.
 This application takes the user input (in military time) and displays when the next train will arrive.
@@ -22,5 +25,5 @@ Options for contributing to this project;
 * Using moment.js cdn to add more complex timing such as different days, weeks, time zones, etc,.
 * Adding more style.
 
-# License
+## License
 [GNU](https://github.com/colinjcason/Firebase-Trains/blob/master/LICENSE)
