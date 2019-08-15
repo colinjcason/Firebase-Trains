@@ -1,7 +1,7 @@
 # Firebase-Trains
 
 ## Deployment
-(https://colinjcason.github.io/Firebase-Trains/)
+https://colinjcason.github.io/Firebase-Trains/
 
 ## Description
 This project is a simple exercise in Google Firebase and the moment.js cdn that allows the user to add a train to the schedule.
